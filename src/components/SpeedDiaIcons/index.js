@@ -1,6 +1,4 @@
 import React from 'react';
-// import { makeStyles, createStyles } from '@mui/styles';
-import Backdrop from '@mui/material/Backdrop';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -9,26 +7,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import ShareIcon from '@mui/icons-material/Share';
 
-// const useStyles = makeStyles((theme) =>
-//   createStyles({
-//     backdrop: {
-//       zIndex: 1,
-//       color: '#fff',
-//     },
-//     root: {
-//       height: 0,
-//       flexGrow: 1,
-//     },
-//     speedDial: {
-//       position: 'fixed',
-//       bottom: theme.spacing(2),
-//       left: theme.spacing(2),
-//     },
-//   })
-// );
 
 export default function SpeedDiaIcons() {
 //   const classes = useStyles();
@@ -101,8 +81,7 @@ export default function SpeedDiaIcons() {
     <div>
        <SpeedDial
         ariaLabel="SpeedDial basic example"
-        sx={{ position: 'absolute', bottom: 16, right: 16 }}
-        // icon={<SpeedDialIcon openIcon={<ShareIcon />} />}
+        sx={{ position: 'fixed', bottom: 16, right: 16 }}
         onClick={handleOpen}
         direction="left"
         icon={<ShareIcon />}

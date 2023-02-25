@@ -36,20 +36,20 @@ const Layout = (props) => {
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <div>
+        <Box onClick={handleDrawerToggle}>
+            {/* <div>
                 <Image
                     src={Logo}
                     alt="Picture of the author"
                     width='120'
                 />
-            </div>
-            <Divider />
+            </div> */}
+            
             <List>
                 {navItems.map((item) => (
                     <Link key={item.title} href={item?.link} legacyBehavior>
                         <ListItem key={item.title} disablePadding>
-                            <ListItemButton sx={{ textAlign: 'center' }}>
+                            <ListItemButton>
                                 <ListItemText primary={item.title} />
                             </ListItemButton>
                         </ListItem>
@@ -72,19 +72,21 @@ const Layout = (props) => {
                         aria-label="open drawer"
                         edge="start"
                         onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' } }}
+                        sx={{ mr: 2, display: { sm: 'block', md:'none' } }}
                     >
                         <MenuIcon />
                     </IconButton>
                     <div>
+                    <Link href={'/'} legacyBehavior>
                         <Image
                             src={Logo}
                             alt="Picture of the author"
                             width='120'
                         />
+                        </Link>
                     </div>
 
-                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                    <Box sx={{ display: { sm: 'none', md: 'block' } }}>
                         {navItems?.map((item) =>
                         (<Link key={item.title} href={item?.link} legacyBehavior>
                             <a className={styles['container__links']} key={item.title}>{item.title}</a>
@@ -99,18 +101,20 @@ const Layout = (props) => {
                     variant="temporary"
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
+                    className={styles['container__drawer']}
                     ModalProps={{
                         keepMounted: true, // Better open performance on mobile.
                     }}
                     sx={{
-                        display: { xs: 'block', sm: 'none' },
+                        display: { sm: 'block', md: 'none' },
                         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
                     }}
                 >
                     {drawer}
                 </Drawer>
             </Box>
-            <Box component="main" sx={{ p: 3 }}>
+            <Box component="main">
+                <Toolbar />
                 {children}
             </Box>
             <SpeedDiaIcons />

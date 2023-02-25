@@ -31,7 +31,7 @@ export const theme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          backgroundColor: '#1a4c51',
+          backgroundColor: '#fff',
           color: '#333',
           boxSizing: 'border-box',
         },
