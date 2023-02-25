@@ -86,7 +86,7 @@ const Layout = (props) => {
                         </Link>
                     </div>
 
-                    <Box sx={{ display: { sm: 'none', md: 'block' } }}>
+                    <Box sx={{ display: {xs:'none', sm: 'none', md: 'block' } }}>
                         {navItems?.map((item) =>
                         (<Link key={item.title} href={item?.link} legacyBehavior>
                             <a className={styles['container__links']} key={item.title}>{item.title}</a>
