@@ -76,7 +76,7 @@ const Layout = (props) => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <div>
+                    <div className={styles['container__logo']}>
                     <Link href={'/'} legacyBehavior>
                         <Image
                             src={Logo}

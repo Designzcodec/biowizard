@@ -51,8 +51,8 @@ export default function Banner(props) {
 
   return (
     <section className={styles['banner']}>
-         <div>
-      <Image src={BannerImg} className={styles['banner__img']} />
+         <div className={styles['banner__bg']}>
+      {/* <Image src={BannerImg} className={styles['banner__img']} /> */}
       </div>
         <div  className={styles['banner__container']}>
 

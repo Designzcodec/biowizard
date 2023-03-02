@@ -2,6 +2,28 @@
     &__features{
         margin: 0 auto;
         text-align: center;
+        max-width: 1200px;
         padding: 60px 0;
+        width: 100%;
+    }
+    &__toppers{
+        margin: 0 auto;
+        text-align: center;
+        max-width: 1200px;
+        padding: 60px 0;
+        width: 100%;
+        &__details{
+            &__name{
+        margin: 0;
+            }
+            &__percent{
+                margin: 0;
+        
+            }
+            &__type{
+                margin: 0;
+        
+            }
+        }
     }
 }
