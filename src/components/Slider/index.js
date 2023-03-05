@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
-
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import styles from "./slider.module.scss";
 
 export const SliderItem = ({ children, width }) => {
@@ -25,19 +26,19 @@ const Slider = ({ children }) => {
     setActiveIndex(newIndex);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!paused) {
-        updateIndex(activeIndex + 1);
-      }
-    }, 3000);
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       if (!paused) {
+//         updateIndex(activeIndex + 1);
+//       }
+//     }, 3000);
 
-    return () => {
-      if (interval) {
-        clearInterval(interval);
-      }
-    };
-  });
+//     return () => {
+//       if (interval) {
+//         clearInterval(interval);
+//       }
+//     };
+//   });
 
   const handlers = useSwipeable({
     onSwipedLeft: () => updateIndex(activeIndex + 1),
@@ -61,13 +62,14 @@ const Slider = ({ children }) => {
       </div>
       <div className={styles['indicators']}>
         <button
+        className={styles['prev']}
           onClick={() => {
             updateIndex(activeIndex - 1);
           }}
         >
-          Prev
+          <NavigateBeforeIcon fontSize="large"  />
         </button>
-        {React.Children.map(children, (child, index) => {
+        {/* {React.Children.map(children, (child, index) => {
           return (
             <button
               onClick={() => {
@@ -77,13 +79,14 @@ const Slider = ({ children }) => {
               {index + 1}
             </button>
           );
-        })}
+        })} */}
         <button
+        className={styles['next']}
           onClick={() => {
             updateIndex(activeIndex + 1);
           }}
         >
-          Next
+          <NavigateNextIcon fontSize="large" />
         </button>
       </div>
     </div>

@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import styles from '../scss/home.module.scss'
 import Slider, { SliderItem } from '@/components/Slider';
+import FindCourses from '@/components/FindCourses';
 const Home = () => {
     return (
         <div className={styles['home']}>
@@ -67,16 +68,32 @@ const Home = () => {
                     </Grid>
                 </Box>
             </section>
-            <section className={styles['home__toppers']}>
-                <iframe width="100%" height="400" src="https://www.youtube.com/embed/Viu00qqJzmg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <section className={styles['home__iframe']}>
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/Viu00qqJzmg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </section>
-            <section>
+            <section className={styles['home__slides']}>
                 <Slider>
-                    <SliderItem>Item 1</SliderItem>
-                    <SliderItem>Item 2</SliderItem>
-                    <SliderItem>Item 3</SliderItem>
+                    <SliderItem>
+                        <div className={styles['home__slides__container']}>
+                            <div><img src='https://place-hold.it/200x200' /></div>
+                            <div className={styles['home__slides__container__text']}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. simply dummy text of the printing and typesetting industry. simply dummy text of the printing and typesetting industry. Lorem Ipsum has</div>
+                        </div>
+                    </SliderItem>
+                    <SliderItem>
+                    <div className={styles['home__slides__container']}>
+                            <div><img src='https://place-hold.it/200x200' /></div>
+                            <div className={styles['home__slides__container__text']}>Lorem Ipsum is simply dummy simply dummy text of the printing and typesetting industry. simply dummy text of the printing and typesetting industry. simply dummy text of the printing and typesetting industry. simply dummy text of the printing and typesetting industry. text of the printing and typesetting industry. Lorem Ipsum has</div>
+                        </div>
+                    </SliderItem>
+                    <SliderItem>
+                    <div className={styles['home__slides__container']}>
+                            <div><img src='https://place-hold.it/200x200' /></div>
+                            <div className={styles['home__slides__container__text']}>Lorem Ipsumsimply dummy text of the printing and typesetting industry. simply dummy text of the printing and typesetting industry. simply dummy text of the printing and typesetting industry.  is simply dummy text of the printing and typesetting industry. Lorem Ipsum has</div>
+                        </div>
+                    </SliderItem>
                 </Slider>
             </section>
+            <FindCourses />
         </div>
     );
 };
