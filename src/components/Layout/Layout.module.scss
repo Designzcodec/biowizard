@@ -1,45 +1,118 @@
 @import '../../scss/mixin';
-.container{
-    &__appbar{
+
+.container {
+    &__appbar {
         background-color: white;
-       
+
     }
-    &__alignment{
-    justify-content: space-between;
-    // @media only screen and (max-width: 1023px) {
-    //     justify-content: flex-start;
-    //   }
-    margin: 0 auto;
-    // text-align: center;
-    // padding: 60px 0;
-    width: 100%;
-    @include for-large-desktop{
-        max-width: 1440px;
+
+    &__alignment {
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 100%;
+
+        @include for-large-desktop {
+            max-width: 1440px;
+        }
     }
-    }
-    &__logo{
+
+    &__logo {
         width: 100%;
         margin: 0 auto;
         text-align: left;
-       @media only screen and (min-width: 900px) {
-        width: auto;
-        margin: 0;
-      } 
+        @include for-mobile{
+            text-align: center;
+        }
+        @media only screen and (min-width: 900px) {
+            width: auto;
+            margin: 0;
+        }
     }
-&__links{
-    color: #333;
-    text-decoration: none;
-    padding: 19px 0;
-    display: inline-block;
-    margin: 0 20px;
-    border-bottom: 2px solid transparent;
-    &:hover{
-        border-bottom: 2px solid;
-        transition: all 400ms ease-in-out;
-        color: #059b74;
+
+    &__links {
+        color: #333;
+        text-decoration: none;
+        padding: 19px 0;
+        display: inline-block;
+        margin: 0 20px;
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+            border-bottom: 2px solid;
+            transition: all 400ms ease-in-out;
+            color: #059b74;
+        }
     }
-}
-&__drawer{
-    background-color: #fff;
-}
+
+    &__drawer {
+        background-color: #fff;
+    }
+
+    &__footer {
+
+        background-color: #2d2d2d;
+        color: #777;
+        padding: 20px;
+
+        &__wrapper {
+            justify-content: space-between;
+            margin: 0 auto;
+            width: 100%;
+
+            @include for-large-desktop {
+                max-width: 1440px;
+            }
+
+            &__hr {
+                border: 1px solid #393939;
+            }
+
+            &__topFooter {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                @include for-mobile{
+                    flex-direction: column;
+                }
+                &__links {
+                    color: #777;
+                    text-decoration: none;
+                    padding: 19px 0;
+                    display: inline-block;
+                    margin: 0 20px;
+                    @include for-mobile{
+                        padding: 5px 0;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    &:hover {
+                    text-decoration: underline;
+                        transition: all 400ms ease-in-out;
+                        color: #059b74;
+                    }
+                }
+            }
+
+            &__bottomFooter {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 14px;
+                @include for-mobile{
+                    flex-direction: column;
+                }
+
+            }
+
+
+
+
+        }
+
+    }
 }

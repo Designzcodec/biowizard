@@ -44,7 +44,7 @@ const Layout = (props) => {
                     width='120'
                 />
             </div> */}
-            
+
             <List>
                 {navItems.map((item) => (
                     <Link key={item.title} href={item?.link} legacyBehavior>
@@ -72,21 +72,21 @@ const Layout = (props) => {
                         aria-label="open drawer"
                         edge="start"
                         onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'block', md:'none' } }}
+                        sx={{ mr: 2, display: { sm: 'block', md: 'none' } }}
                     >
                         <MenuIcon />
                     </IconButton>
                     <div className={styles['container__logo']}>
-                    <Link href={'/'} legacyBehavior>
-                        <Image
-                            src={Logo}
-                            alt="Picture of the author"
-                            width='120'
-                        />
+                        <Link href={'/'} legacyBehavior>
+                            <Image
+                                src={Logo}
+                                alt="Picture of the author"
+                                width='120'
+                            />
                         </Link>
                     </div>
 
-                    <Box sx={{ display: {xs:'none', sm: 'none', md: 'block' } }}>
+                    <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
                         {navItems?.map((item) =>
                         (<Link key={item.title} href={item?.link} legacyBehavior>
                             <a className={styles['container__links']} key={item.title}>{item.title}</a>
@@ -116,7 +116,34 @@ const Layout = (props) => {
             <Box component="main">
                 <Toolbar />
                 {children}
+
             </Box>
+            <footer className={styles['container__footer']}>
+                <div className={styles['container__footer__wrapper']}>
+                    <div className={styles['container__footer__wrapper__topFooter']}>
+
+                        <div><Image
+                            src={Logo}
+                            alt="Picture of the author"
+                            width='120'
+                        /></div>
+                        <div>{navItems?.map((item) =>
+                        (<Link key={item.title} href={item?.link} legacyBehavior>
+                            <a className={styles['container__footer__wrapper__topFooter__links']} key={item.title}>{item.title}</a>
+                        </Link>)
+                        )}</div>
+                    </div>
+                    <hr className={styles['container__footer__wrapper__hr']} />
+                    <div>
+                        <div className={styles['container__footer__wrapper__bottomFooter']}>
+
+                            <div> &copy; 2023 | All Rights Reserved.</div>
+                            <div>biowizardacademy@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+
+            </footer>
             <SpeedDiaIcons />
         </Box>
     );
