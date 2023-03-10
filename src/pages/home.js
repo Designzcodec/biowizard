@@ -69,9 +69,10 @@ const Home = () => {
                 </Box>
             </section>
             <section className={styles['home__iframe']}>
-                <iframe width="100%" height="500" src="https://www.youtube.com/embed/Viu00qqJzmg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/Viu00qqJzmg" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
             </section>
             <section className={styles['home__slides']}>
+                <h1>Latest Achievements</h1>
                 <Slider>
                     <SliderItem>
                         <div className={styles['home__slides__container']}>
